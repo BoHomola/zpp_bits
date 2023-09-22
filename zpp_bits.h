@@ -1,6 +1,7 @@
 #ifndef ZPP_BITS_H
 #define ZPP_BITS_H
 
+#define NOMINMAX
 #include <algorithm>
 #include <array>
 #include <bit>
@@ -56,6 +57,10 @@
 #define ZPP_BITS_INLINE
 #undef ZPP_BITS_CONSTEXPR_INLINE_LAMBDA
 #define ZPP_BITS_CONSTEXPR_INLINE_LAMBDA constexpr
+#endif
+#if defined(_WIN32)
+#undef max
+#undef min
 #endif
 
 #ifndef ZPP_BITS_INLINE_DECODE_VARINT
